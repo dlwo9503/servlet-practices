@@ -25,6 +25,11 @@
 		<plugins>	<!--컴파일러 플러인 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.3.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<configuration>
 					<encoding>UTF-8</encoding>
@@ -44,5 +49,7 @@
 
 	<modules>
 		<module>helloweb</module>
+		<module>emaillist01</module>
+		<module>helloweb2</module>
 	</modules>
 </project>
