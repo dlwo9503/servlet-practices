@@ -1,8 +1,5 @@
 package com.douzone.guestbook.vo;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class GuestbookVo {
 	private Long no;
 	private String name;
@@ -34,14 +31,10 @@ public class GuestbookVo {
 		this.message = message;
 	}
 	public String getRegDate() {
-		Date date = new Date();
-//		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy/MM/dd");
-		String regDate = transFormat.format(date);
 		return regDate;
 	}
-	public void setRegDate(String regDate) {
-		this.regDate = regDate;
+	public void setRegDate(String regDate1) {
+		this.regDate = regDate1;
 	}
 	@Override
 	public String toString() {

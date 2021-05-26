@@ -1,10 +1,15 @@
 <%@page import="com.douzone.guestbook.vo.GuestbookVo"%>
 <%@page import="java.util.List"%>
 <%@page import="com.douzone.guestbook.dao.GuestbookDao"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
 	List<GuestbookVo> list = (List<GuestbookVo>)request.getAttribute("list");
+	Date date = new Date();
+	SimpleDateFormat transFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	String regDate = transFormat.format(date);
 %>
 <html>
 <head>
@@ -14,6 +19,7 @@
 <body>
 	<form action="<%=request.getContextPath() %>/gb" method="post">
 		<input type="hidden" name="a" value="add">
+		<input type="hidden" name="regDate" value=<%=regDate %>>
 		<table border=1 width=500>
 			<tr>
 				<td>이름</td>
