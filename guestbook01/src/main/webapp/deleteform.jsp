@@ -11,7 +11,7 @@
 </head>
 <body>
 	<form method="post" action="<%=request.getContextPath() %>/delete.jsp">
-		<input type='text' name="no" value=<%=no %>> <!-- hidden으로 숨기고 벨류값을 받아와야 함 -->
+		<input type='hidden' name="no" value=<%=no %>> <!-- hidden으로 숨기고 벨류값을 받아와야 함 -->
 		<table>
 			<tr>
 				<td>비밀번호</td>

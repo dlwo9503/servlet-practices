@@ -27,7 +27,6 @@
 		out.println("<script>alert('비밀번호가 틀렸습니다.')</script>");
 		%><script>location.href="index.jsp"</script><%
 	}
-	
 %>
 </head>
 <body>
