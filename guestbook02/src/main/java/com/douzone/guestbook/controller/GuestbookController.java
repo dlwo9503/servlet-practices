@@ -1,6 +1,7 @@
 package com.douzone.guestbook.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -29,13 +30,13 @@ public class GuestbookController extends HttpServlet {
 			String name = request.getParameter("name");
 			String password = request.getParameter("password");
 			String message = request.getParameter("message");
-			String regDate = request.getParameter("message");
+			String regDate = request.getParameter("regDate");
 			
 			GuestbookVo vo = new GuestbookVo();
 			vo.setName(name);
 			vo.setPassword(password);
 			vo.setMessage(message);
-			vo.setRegDate("1999-01-01");
+			vo.setRegDate(regDate);
 			
 			new GuestbookDao().insert(vo);
 			// redirect 응답
@@ -59,7 +60,10 @@ public class GuestbookController extends HttpServlet {
 				response.sendRedirect(request.getContextPath() + "/gb");	
 			} else {
 				// 경고창
-				response.sendRedirect(request.getContextPath() + "/gb");
+				response.setContentType("text/html; charset=UTF-8"); // 서블릿에서 html 사용
+				PrintWriter writer = response.getWriter();
+				writer.println("<script>alert('비밀번호가 틀렸습니다.'); location.href='gb'</script>"); 
+				writer.close();
 			}
 		} else {
 			/* default request(action) */

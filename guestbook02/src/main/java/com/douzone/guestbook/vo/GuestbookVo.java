@@ -35,7 +35,8 @@ public class GuestbookVo {
 	}
 	public String getRegDate() {
 		Date date = new Date();
-		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+//		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy/MM/dd");
 		String regDate = transFormat.format(date);
 		return regDate;
 	}
