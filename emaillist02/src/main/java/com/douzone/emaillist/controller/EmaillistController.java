@@ -26,6 +26,20 @@ public class EmaillistController extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/form.jsp");
 			rd.forward(request, response);
 		} else if ("add".equals(action)) {
+			String firstName = request.getParameter("fn");
+			String lastName = request.getParameter("ln");
+			String email = request.getParameter("email");
+			
+			EmaillistVo vo = new EmaillistVo();
+			vo.setFirstName(firstName);
+			vo.setLastName(lastName);
+			vo.setEmail(email);
+			
+			new EmaillistDao().insert(vo);
+			
+			// 2. redirect 응답
+			response.sendRedirect(request.getContextPath() + "/el");
+			
 		} else {
 			/* default request(action) */
 
