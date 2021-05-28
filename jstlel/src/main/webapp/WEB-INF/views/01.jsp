@@ -30,5 +30,20 @@
 	${vo != null } <br>
 	${empty obj } <br> <!-- empty == null -->
 	${not empty obj } <br>
+	
+	<h1>논리 연산</h1>
+	${ival == 10 && lval < 10000 } <br>
+	${ival < 5 && lval - 20 == 0 } <br>
+	
+	<h1>map으로 값 받아서 출력</h1>
+	${m.ival } <br>
+	${m.lval } <br>
+	${m.fval } <br>
+	${m.bval } <br>
+	
+	<h1>요청 파라미터의 값</h1>
+	--${param.a }-- <br>
+	--${param.email }-- <br>
+	
 </body>
 </html>
