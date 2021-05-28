@@ -24,7 +24,7 @@ public class GuestbookController extends HttpServlet {
 		String action = request.getParameter("a");
 		if ("deleteform".equals(action)) {
 			// view로 포워딩
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/deleteform.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/guestbook/deleteform.jsp");
 			rd.forward(request, response);
 		} else if ("add".equals(action)) { // 등록
 			String name = request.getParameter("name");
@@ -62,7 +62,7 @@ public class GuestbookController extends HttpServlet {
 				// 경고창
 				response.setContentType("text/html; charset=UTF-8"); // 서블릿에서 html 사용
 				PrintWriter writer = response.getWriter();
-				writer.println("<script>alert('비밀번호가 틀렸습니다.'); location.href='gb'</script>"); 
+				writer.println("<script>alert('비밀번호가 틀렸습니다.'); location.href='guestbook'</script>"); 
 				writer.close();
 			}
 		} else {
@@ -75,7 +75,7 @@ public class GuestbookController extends HttpServlet {
 			request.setAttribute("list", list); // (이름, 데이터)
 
 			// 3. view로 포워딩
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/index.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/guestbook/index.jsp");
 			rd.forward(request, response);
 		}
 	}
